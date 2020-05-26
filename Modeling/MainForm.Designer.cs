@@ -64,7 +64,7 @@
             // text2
             // 
             this.text2.AutoSize = true;
-            this.text2.Location = new System.Drawing.Point(44, 152);
+            this.text2.Location = new System.Drawing.Point(44, 138);
             this.text2.Name = "text2";
             this.text2.Size = new System.Drawing.Size(131, 13);
             this.text2.TabIndex = 4;
@@ -73,7 +73,8 @@
             // listBox
             // 
             this.listBox.FormattingEnabled = true;
-            this.listBox.Location = new System.Drawing.Point(44, 177);
+            this.listBox.HorizontalScrollbar = true;
+            this.listBox.Location = new System.Drawing.Point(44, 163);
             this.listBox.Name = "listBox";
             this.listBox.Size = new System.Drawing.Size(149, 121);
             this.listBox.TabIndex = 5;
@@ -82,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(239, 332);
+            this.ClientSize = new System.Drawing.Size(239, 306);
             this.Controls.Add(this.listBox);
             this.Controls.Add(this.text2);
             this.Controls.Add(this.modeling);

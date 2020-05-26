@@ -12,5 +12,10 @@ namespace Modeling
         {
 
         }
+
+        public Session(string login)
+        {
+            Login = login;
+        }
     }
 }
