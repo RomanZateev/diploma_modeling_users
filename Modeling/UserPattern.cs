@@ -6,10 +6,8 @@ namespace Modeling
     {
         public string Login { get; set; }
 
-        //public Dictionary<string, double> expectedValues { get; set; }
         public List<Letter> ExpectedValues { get; set; }
 
-        //public Dictionary<string, double> dispersions { get; set; }
         public List<Letter> Dispersions { get; set; }
 
     }
