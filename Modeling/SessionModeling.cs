@@ -6,15 +6,18 @@ namespace Modeling
 {
     public class SessionModeling
     {
-        public List<UserPattern> Patterns;
-
-        public static List<Session> NewSessions = new List<Session>();
+        private List<UserPattern> Patterns;
 
         static readonly Random random = new Random();
 
-        public SessionModeling(List<UserPattern> userPatterns)
+        public SessionModeling(List<UserPattern> patterns)
         {
-            Patterns = userPatterns;
+            Patterns = patterns;
+        }
+
+        public SessionModeling()
+        {
+
         }
 
         //генерация сессий
@@ -36,7 +39,7 @@ namespace Modeling
                 {
                     Letter letter = new Letter();
                     letter.Key = ExpectedValue.Key;
-                    letter.Value = Box_Muller(ExpectedValue.Value, Math.Sqrt(pattern.Dispersions.FirstOrDefault(x => x.Key.Equals(ExpectedValue.Key)).Value));
+                    letter.Value = BoxMuller(ExpectedValue.Value, Math.Sqrt(pattern.Dispersions.FirstOrDefault(x => x.Key.Equals(ExpectedValue.Key)).Value));
 
                     letters.Add(letter);
                 }
@@ -50,7 +53,7 @@ namespace Modeling
             showSessions.Show();
         }
 
-        static double Box_Muller(double m, double sigma)
+        private double BoxMuller(double m, double sigma)
         {
         Start:
 

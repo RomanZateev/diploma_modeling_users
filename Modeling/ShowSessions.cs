@@ -35,6 +35,8 @@ namespace Modeling
                 generated = saveFileDialog.FileName;
 
             WriteToFile(SessionsGlobal);
+
+            //MessageBox.Show("Сессии успешно сохранены");
         }
 
         static void WriteToFile(List<Session> users)

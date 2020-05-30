@@ -13,9 +13,9 @@
 
         public Letter(string key, double value)
         {
-            this.Key = key;
+            Key = key;
 
-            this.Value = value;
+            Value = value;
         }
     }
 }

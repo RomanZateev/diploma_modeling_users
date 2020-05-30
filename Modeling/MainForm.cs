@@ -35,7 +35,6 @@ namespace Modeling
             if (success)
             {
                 SessionModeling sessionModeling = new SessionModeling(Patterns);
-
                 sessionModeling.Generate(number);
             }
             else
