@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace Modeling
@@ -32,9 +33,11 @@ namespace Modeling
         {
             bool success = Int32.TryParse(textBox.Text, out int number);
 
+            string login = listBox.SelectedItem.ToString();
+
             if (success)
             {
-                SessionModeling sessionModeling = new SessionModeling(Patterns);
+                SessionModeling sessionModeling = new SessionModeling(Patterns.FirstOrDefault(x => x.Login == login));
                 sessionModeling.Generate(number);
             }
             else

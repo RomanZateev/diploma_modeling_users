@@ -6,13 +6,13 @@ namespace Modeling
 {
     public class SessionModeling
     {
-        private List<UserPattern> Patterns;
+        private UserPattern pattern;
 
         static readonly Random random = new Random();
 
-        public SessionModeling(List<UserPattern> patterns)
+        public SessionModeling(UserPattern _pattern)
         {
-            Patterns = patterns;
+            pattern = _pattern;
         }
 
         public SessionModeling()
@@ -27,19 +27,17 @@ namespace Modeling
 
             for (int i = 0; i < value; i++)
             {
-                int mod = i % Patterns.Count;
-
-                var pattern = Patterns[mod];
-
                 Session session = new Session(pattern.Login);
 
                 List<Letter> letters = new List<Letter>();
 
                 foreach (Letter ExpectedValue in pattern.ExpectedValues)
                 {
-                    Letter letter = new Letter();
-                    letter.Key = ExpectedValue.Key;
-                    letter.Value = BoxMuller(ExpectedValue.Value, Math.Sqrt(pattern.Dispersions.FirstOrDefault(x => x.Key.Equals(ExpectedValue.Key)).Value));
+                    Letter letter = new Letter
+                    {
+                        Key = ExpectedValue.Key,
+                        Value = BoxMuller(ExpectedValue.Value, Math.Sqrt(pattern.Dispersions.FirstOrDefault(x => x.Key.Equals(ExpectedValue.Key)).Value))
+                    };
 
                     letters.Add(letter);
                 }
