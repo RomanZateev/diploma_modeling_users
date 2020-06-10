@@ -83,7 +83,7 @@
             this.Controls.Add(this.Sessions);
             this.Controls.Add(this.label1);
             this.Name = "ShowSessions";
-            this.Text = "ShowSessions";
+            this.Text = "Результат моделирования";
             this.ResumeLayout(false);
             this.PerformLayout();
 
